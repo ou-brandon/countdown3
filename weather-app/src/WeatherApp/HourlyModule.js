@@ -14,9 +14,10 @@ const HourlyModule = (props) => {
     return (
         <>
             <Card>
+
                 <Grid container spacing={0} sx={{padding:2}}>
                     <Grid item xs={2}>
-                        <Typography variant='subtitle'>{time}</Typography>      
+                        <Typography variant='subtitle'>{utils.removeSec(time)}</Typography>      
                     </Grid>
                     <Grid item xs={3}>
                         <Typography variant='h6'>{utils.kToF(props.info.temp)} °F</Typography>

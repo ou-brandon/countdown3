@@ -6,7 +6,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import { ExpandMore } from '@mui/icons-material';
-
+import { AccordionDetails } from '@mui/material';
 //import './App.css';
 
 const DailyWeather = (props) => {
@@ -20,9 +20,10 @@ const DailyWeather = (props) => {
                     id="panel1a-header"
                 >
                     <Typography>Daily Weather</Typography>
-                    </AccordionSummary>
+                </AccordionSummary>
+                <AccordionDetails>
                     {props.daily.map((obj) => <DailyModule info={obj}/>)}
-                    
+                </AccordionDetails>
                 </Accordion>
                 
             </>

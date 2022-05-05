@@ -13,3 +13,14 @@ export const toUpper = (phrase) => {
             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
             .join(' ');
 }
+
+export const removeYear = (dateString) => {
+    const len = dateString.split(' ').length;
+    return dateString.split(' ').slice(0, len-1).join(' ');
+}
+
+export const removeSec = (timeString) => {
+    const AMPM = timeString.split(' ')[1];
+    const len = timeString.split(':').length;
+    return timeString.split(':').slice(0, len-1).join(':') + ' ' + AMPM;
+}

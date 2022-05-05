@@ -26,8 +26,6 @@ const WeatherDisplay = (props) => {
                     
                     <Stack
                         direction="column"
-                        justifyContent="flex-start"
-                        alignItems="center"
                         spacing={2}
                     >
                         <CurrentWeather current={data.current}/>
