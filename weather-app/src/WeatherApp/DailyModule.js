@@ -1,26 +1,23 @@
 import React from 'react';
 //import { useState, useEffect } from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
+//import Card from '@mui/material/Card';
+//import CardHeader from '@mui/material/CardHeader';
+//import CardContent from '@mui/material/CardContent';
 import { Grid } from '@mui/material';
 import * as utils from './utils'
 import { Typography } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { CardMedia } from '@mui/material';
-import { Accordion } from '@mui/material';
-import { AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box } from '@mui/system';
+import { Card } from '@mui/material';
+//import { Box } from '@mui/system';
 
 const DailyModule = (props) => {
     
     const date = new Date(props.info.dt * 1000).toDateString({month: "short", day: "numeric"});
     return (
         <>
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Grid container spacing={2}>
+            <Card sx={{margin: 1, padding: 3}}>
+                <Grid container spacing={2}>
                         <Grid item xs={1}>
                             <Typography variant='subtitle'>{utils.removeYear(date)}</Typography>
                         </Grid>
@@ -59,10 +56,12 @@ const DailyModule = (props) => {
                         </Grid>
                         
                     </Grid>
+
+            </Card>
+                    
                         
                     
-                </AccordionSummary>
-            </Accordion>
+                
         </>
 
     );

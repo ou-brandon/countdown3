@@ -31,11 +31,10 @@ const HourlyModule = (props) => {
                     <Grid item xs={3}>
                     </Grid>
                     <Grid item xs={1}>
-                        <Typography variant='h6'> {props.info.humidity} %</Typography>
+                        <Typography variant='h6'> {props.info.humidity}%</Typography>
+                        <Typography variant='caption'>Humidity</Typography>
                     </Grid>
-                    <Grid item xs={1}>
-                        <CardMedia style={{width:50}} component="img" image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRYkXrOAcfxhVfuZaxYfLeje0fjqpK8l_SQ&usqp=CAU'/>
-                    </Grid>
+                    
                 </Grid>
                
             </Card>        

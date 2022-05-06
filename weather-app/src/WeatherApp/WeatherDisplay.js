@@ -28,7 +28,7 @@ const WeatherDisplay = (props) => {
                         direction="column"
                         spacing={2}
                     >
-                        <CurrentWeather current={data.current}/>
+                        <CurrentWeather current={data.current} long={props.longitude} lat={props.latitude}/>
                         <HourlyWeather hourly={data.hourly}/>
                         <DailyWeather daily={data.daily}/>
                     </Stack> 

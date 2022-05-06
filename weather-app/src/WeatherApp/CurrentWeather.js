@@ -32,20 +32,26 @@ const CurrentWeather = (props) => {
     */
     return(
         <div class='current-weather'>
-            <Card variant='outlined' alignItems='center' sx={{boxShadow: 3, ':hover': {boxShadow: 10}}}>
-                <Typography variant='h3'>Current Weather</Typography>
+            <Card variant='outlined' alignItems='center' sx={{padding: 2, boxShadow: 3, ':hover': {boxShadow: 10}}}>
+                <Typography variant='h4'>Current Weather</Typography>
                 <CardContent>
-                    <div class='icon-display'>
                         <Grid container spacing={2} alignItems="center" justifyContent="center">
-                            <Grid item >
-                                <Typography  variant='subtitle'>{utils.toUpper(props.current.weather[0].description)} </Typography>
+                            <Grid item xs={3}>
+                                <Typography variant='h6'>{props.long}, {props.lat}</Typography>
+                                <Typography variant='caption'>Longitude, Latitude</Typography> 
                             </Grid>
-                            <Grid item>
+                            <Grid item xs={3}>
+                                <Typography variant='h6'>Temperature: {utils.kToF(props.current.temp)} °F</Typography> 
+                                <Typography variant='subtitle'>(Feels like {utils.kToF(props.current.feels_like)} °F)</Typography> 
+                            </Grid>
+                            <Grid item xs={1}>
                                 <CardMedia component="img" image={utils.createImageLink(props.current.weather[0].icon)}/>
                             </Grid>
-                        </Grid>           
-                    </div>
-                    <Typography variant='h6'>Temperature: {utils.kToF(props.current.temp)} °F</Typography> 
+                            <Grid item xs={2}>
+                                <Typography  variant='subtitle'>{utils.toUpper(props.current.weather[0].description)} </Typography>
+                            </Grid>
+                        </Grid>
+                    
 
                 </CardContent>
             </Card>
